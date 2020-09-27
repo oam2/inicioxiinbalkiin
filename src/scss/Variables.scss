@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;515;600;700&display=swap');
+//se ocupo una fuente externa de gogole font
+$body-font-family: 'Quicksand', sans-serif;
+
+//configuracion de los pesos para la fuente externa 
+$font-weights: (
+  'thin': 300,
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'bold': 600,
+  'black': 700,
+);
