@@ -1,16 +1,19 @@
 <template>
-  <div class="home">
-    <BarraNavegacion/>
-  </div>
+<div class="home">
+    <BarraNavegacion />
+    <Mapa />
+</div>
 </template>
 
 <script>
-import BarraNavegacion from "../components/BarraNavegacion"
-
+import BarraNavegacion from "../components/BarraNavegacion";
+import Mapa from "../components/Mapa";
 export default {
-  name: 'Home',
-  components:{
-    BarraNavegacion
-  }
+    name: 'Home',
+    components: {
+        BarraNavegacion,
+        Mapa
+
+    }
 }
 </script>
