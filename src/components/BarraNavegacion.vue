@@ -8,10 +8,10 @@
       <v-toolbar-title>Xiinbalkiin</v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <b-btn icon>
+      <v-btn icon>
         <v-icon> mdi-google-translate </v-icon>
         ES
-      </b-btn>
+      </v-btn>
     </v-app-bar>
     <NavegationDrawer
       :drawer="mostrarNavegationDrawer"
