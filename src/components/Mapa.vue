@@ -5,6 +5,7 @@
 <script>
 import L from "leaflet";
 import { db } from "../common/Firebase";
+import { ruta } from "../common/Ruta";
 
 export default {
   name: "Leatfletcomponent",
@@ -18,6 +19,7 @@ export default {
     async init() {
       await this.pintarMap();
       await this.obtenerMarcadores();
+      await this.pintarRuta();
     },
     pintarMap() {
       const contenedorMapa = this.$refs.contenedorMapa;
@@ -36,14 +38,23 @@ export default {
         response.docs.forEach((e) => {
           let latitud = e.data().coordenadas.latitude;
           let longitud = e.data().coordenadas.longitude;
-          this.pintarMarcador( [ latitud, longitud]);
-          })
+          this.pintarMarcador([latitud, longitud]);
+        });
       } catch (error) {
         console.warn(error);
       }
     },
     pintarMarcador(coordenadas) {
       L.marker(coordenadas).addTo(this.mapa);
+    },
+
+    pintarRuta() {
+      L.geoJSON(ruta, {
+        style: {
+          color: "#6200EA",
+          weight: 12,
+        },
+      }).addTo(this.mapa);
     },
   },
 };
